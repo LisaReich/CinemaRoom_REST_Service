@@ -30,12 +30,16 @@ Request body: ```token``` that identifies the ticket in the cinema;
 URL parameters: a password key with a ```super_secret``` value;
 
 Statistics values description:
+
 ```current_income``` — shows the total income of sold tickets.
+
 ```number_of_available_seats``` — shows how many seats are available.
+
 ```number_of_purchased_tickets``` — shows how many tickets were purchased.
 ## Usage
 **Example 1**    
 - ```GET /seats``` request
+
 Response body:
 ```
 {
@@ -69,6 +73,7 @@ Response body:
 }
 ```
 - ```POST /purchase``` correct request
+
 Request body:
 ```
 {
@@ -76,6 +81,7 @@ Request body:
     "column": 4
 }
 ```
+
 Response body:
 ```
 {
@@ -88,6 +94,7 @@ Response body:
 }
 ```
 - ```POST /purchase``` request, the ticket is already booked
+
 Request body:
 ```
 {
@@ -95,6 +102,7 @@ Request body:
     "column": 4
 } 
 ```
+
 Response body:
 ```
 {
@@ -102,6 +110,7 @@ Response body:
 }
 ```
 - ```POST /purchase``` request, a wrong row number
+
 Request body:
 ```
 {
@@ -109,6 +118,7 @@ Request body:
     "column": 4
 }
 ```
+
 Response body:
 ```
 {
@@ -116,12 +126,14 @@ Response body:
 }
 ```
 - ```POST /return``` request with the correct token
+
 Request body:
 ```
 {
     "token": "e739267a-7031-4eed-a49c-65d8ac11f556"
 }
 ```
+
 Response body:
 ```
 {
@@ -133,12 +145,14 @@ Response body:
 }
 ```
 - ```POST /return``` with an expired token
+
 Request body:
 ```
 {
     "token": "e739267a-7031-4eed-a49c-65d8ac11f556"
 }
 ```
+
 Response body:
 ```
 {
@@ -146,6 +160,7 @@ Response body:
 }
 ```
 - ```POST /stats``` request with no parameters
+
 Response body:
 ```
 {
@@ -153,6 +168,7 @@ Response body:
 }
 ```
 - ```POST /stats``` request with the correct password
+
 Response body:
 ```
 {
