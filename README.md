@@ -27,7 +27,7 @@ Request body: ```token``` that identifies the ticket in the cinema;
 
 - ```POST /stats``` returns the movie theatre statistics. 
 
-URL parameters: a password key with a ```super_secret``` value;
+URL parameters: a ```password``` key with a ```super_secret``` value;
 
 Statistics values description:
 
