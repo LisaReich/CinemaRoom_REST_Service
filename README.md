@@ -16,13 +16,17 @@ CinemaRoom_REST_Service/task/src/cinema/Main.java
 - ```GET /seats``` returns the information about the movie theatre: the rows, columns, and available seats. Our cinema room has 9 rows with 9 seats each; 
 
 - ```POST /purchase``` returns a ticket with UUID token as JSON object, marks a booked ticket as purchased. The ticket is not available anymore.
+
 Request body: ```row``` and  ```column``` numbers of the purchased ticket;
 
 - ```POST /return``` returns returned ticket as JSON object, marks the ticket as available again.
+
 Request body: ```token``` that identifies the ticket in the cinema;
 
 - ```POST /stats``` returns the movie theatre statistics. 
+
 URL parameters: a password key with a ```super_secret``` value;
+
 Statistics values description:
 ```current_income``` — shows the total income of sold tickets.
 ```number_of_available_seats``` — shows how many seats are available.
