@@ -13,7 +13,9 @@ Cinema tickets sales service.
 To launch the service compile the file:  
 CinemaRoom_REST_Service/task/src/cinema/Main.java
 ## API 
-- ```GET /seats``` returns the information about the movie theatre: the rows, columns, and available seats. Our cinema room has 9 rows with 9 seats each; 
+- ```GET /seats``` returns the information about the movie theatre: the rows, columns, and available seats. 
+
+Our cinema room has 9 rows with 9 seats each; 
 
 - ```POST /purchase``` returns a ticket with UUID token as JSON object, marks a booked ticket as purchased. The ticket is not available anymore.
 
@@ -77,9 +79,12 @@ Request body:
 Response body:
 ```
 {
-    "row": 3,
-    "column": 4,
-    "price": 10
+    "token": "e739267a-7031-4eed-a49c-65d8ac11f556",
+    "ticket": {
+        "row": 3,
+        "column": 4,
+        "price": 10
+    }
 }
 ```
 - ```POST /purchase``` request, the ticket is already booked
@@ -108,6 +113,52 @@ Response body:
 ```
 {
     "error": "The number of a row or a column is out of bounds!"
+}
+```
+- ```POST /return``` request with the correct token
+Request body:
+```
+{
+    "token": "e739267a-7031-4eed-a49c-65d8ac11f556"
+}
+```
+Response body:
+```
+{
+    "returned_ticket": {
+        "row": 1,
+        "column": 2,
+        "price": 10
+    }
+}
+```
+- ```POST /return``` with an expired token
+Request body:
+```
+{
+    "token": "e739267a-7031-4eed-a49c-65d8ac11f556"
+}
+```
+Response body:
+```
+{
+    "error": "Wrong token!"
+}
+```
+- ```POST /stats``` request with no parameters
+Response body:
+```
+{
+    "error": "The password is wrong!"
+}
+```
+- ```POST /stats``` request with the correct password
+Response body:
+```
+{
+    "current_income": 30,
+    "number_of_available_seats": 78,
+    "number_of_purchased_tickets": 3
 }
 ```
 ## Additional info
