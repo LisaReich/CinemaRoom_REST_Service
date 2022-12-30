@@ -6,12 +6,9 @@ Cinema tickets sales service.
 - Statistics of the venue is available
 - Exception handling
 ## Dependencies
--   
--   
--  
+- Spring Web MVC  
 ## Running the project
-To launch the service compile the file:  
-CinemaRoom_REST_Service/task/src/cinema/Main.java
+
 ## API 
 - ```GET /seats``` returns the information about the movie theatre: the rows, columns, and available seats. 
 
