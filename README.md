@@ -8,7 +8,11 @@ Cinema tickets sales service.
 ## Dependencies
 - Spring Web MVC  
 ## Running the project
-
+To run the service from CMD:
+   1. Open CMD and go to .\CinemaRoom_REST_Service
+   2. Launch gradle (the wrapper is already included in the project package): .\CinemaRoom_REST_Service gradlew run
+   3. Server.port is 28852 
+   4. In order to test the service please use Postman REST Client (you may download it from the official: https://www.postman.com/downloads/) 
 ## API 
 - ```GET /seats``` returns the information about the movie theatre: the rows, columns, and available seats. 
 
